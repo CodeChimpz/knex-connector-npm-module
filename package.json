@@ -1,0 +1,23 @@
+{
+  "name": "knex-db-connector",
+  "version": "1.0.2",
+  "description": "util package that connects to a mysql database with knex",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc"
+  },
+  "author": "codechimpz",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "knex": "^2.4.0",
+    "mysql2": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  }
+}
