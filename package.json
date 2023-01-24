@@ -12,9 +12,12 @@
   "author": "codechimpz",
   "license": "ISC",
   "dependencies": {
+    "@types/knex": "^0.16.1",
     "dotenv": "^16.0.3",
     "knex": "^2.4.0",
-    "mysql2": "^3.0.1"
+    "logger": "file:../logger",
+    "mysql2": "^3.0.1",
+    "performance-now": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
