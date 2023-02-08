@@ -11,10 +11,10 @@ interface SelectOptions {
 }
 
 interface WhereObjI {
-    select: Array<string> | string | undefined,
-    where: (builder: Knex.QueryBuilder) => Knex.QueryBuilder,
-    orderBy: Array<string | { column: string, order: string }>,
-    options: SelectOptions
+    select?: Array<string> | string,
+    where?: (builder: Knex.QueryBuilder) => Knex.QueryBuilder,
+    orderBy?: Array<string | { column: string, order: string }>,
+    options?: SelectOptions
 }
 
 export class Repository {
@@ -29,12 +29,11 @@ export class Repository {
 
     async find(opts: WhereObjI) {
         const {options, where, orderBy, select} = opts
-        const {limit, offset} = options
         return this.knex(this.schema).select(select || '*')
-            .where(where)
-            .orderBy(orderBy)
-            .limit(limit || 100)
-            .offset(offset || 0)
+            .where(where || {})
+            .orderBy(orderBy || [])
+            .limit(options?.limit || 100)
+            .offset(options?.offset || 0)
     }
 
     async create(object: any) {
