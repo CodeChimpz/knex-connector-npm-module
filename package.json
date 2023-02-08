@@ -1,6 +1,6 @@
 {
   "name": "knex-db-connector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "util package that connects to a mysql database with knex",
   "type": "module",
   "main": "dist/index.js",

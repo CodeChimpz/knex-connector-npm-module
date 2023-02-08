@@ -10,7 +10,7 @@ interface SelectOptions {
     offset?: number
 }
 
-class Repository {
+export class Repository {
     knex: Knex
     schema: string
 
