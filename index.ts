@@ -10,6 +10,13 @@ interface SelectOptions {
     offset?: number
 }
 
+interface WhereObjI {
+    select: Array<string> | string,
+    where: (builder: Knex.QueryBuilder) => Knex.QueryBuilder,
+    orderBy: Array<string | { column: string, order: string }>,
+    options: SelectOptions
+}
+
 export class Repository {
     knex: Knex
     schema: string
@@ -20,10 +27,8 @@ export class Repository {
 
     }
 
-    async find(select: Array<string> | string,
-               where: (builder: Knex.QueryBuilder) => Knex.QueryBuilder,
-               orderBy: Array<string | { column: string, order: string }>,
-               options: SelectOptions) {
+    async find(opts: WhereObjI) {
+        const {options, where, orderBy, select} = opts
         const {limit, offset} = options
         return this.knex(this.schema).select(select)
             .where(where)

@@ -6,7 +6,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "npm run build",
+    "patch" : "git add . && git commit -m 'patch' && npm version patch",
+    "prepublishOnly": "npm run build",
     "build": "tsc"
   },
   "author": "codechimpz",
