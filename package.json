@@ -1,12 +1,12 @@
 {
   "name": "knex-db-connector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "util package that connects to a mysql database with knex",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "patch" : "git add . && git commit -m 'patch' && npm version patch",
+    "patch": "git add . && git commit -m 'patch' && npm version patch",
     "prepublishOnly": "npm run build",
     "build": "tsc"
   },
