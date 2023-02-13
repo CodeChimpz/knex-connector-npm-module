@@ -1,5 +1,5 @@
 import {config} from "dotenv";
-import {WinstonLoggerService} from "../logger";
+import {WinstonLoggerService} from "mein-winston-logger";
 
 config()
 import knex, {Knex} from "knex";
